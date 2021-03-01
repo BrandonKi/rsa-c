@@ -4,7 +4,9 @@ At the moment each character is encrypted/decrypted individually and small keys 
 This means that the output is in a predictable format and can be reversed given enough time and resources.
 This is meant to be a lightweight and fast way to encrypt data. It should not be used where security is extremely important.
 
-    usage: rsa [e public key] | [d private key] | [g] | [s sizeof_stdin_buffer]
+rsa.h can be used as a header only library. rsa.c is just an sample.
+
+    rsa.c usage: rsa [e public key] | [d private key] | [g] | [s sizeof_stdin_buffer]
 
 ## __example usage:__
 
