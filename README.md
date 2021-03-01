@@ -9,15 +9,18 @@ This is meant to be a lightweight and fast way to encrypt data. It should not be
 ## __example usage:__
 
 ### __generate the keys with the `g` option__
-./rsa g
+
+```./rsa g```
 
 ### __enter the text to be encryped through stdin and use the `e`__
-echo "text" | ./rsa e 3233 17
+
+```echo "text" | ./rsa e 3233 17```
 
 ### __enter the encryped text through stdin to be decrypted and use the `d`__
-echo "884 1313 1542 884" | ./rsa d 3233 413
+
+```echo "884 1313 1542 884" | ./rsa d 3233 413```
 
 ### __the `s` option can be used to specify the max size of the input to avoid overflow or wasted space__
 @NOTE make sure there are at least 2 extra bytes given to the size option
 
-echo "test" | ./rsa e 3233 413 s 10
+```echo "test" | ./rsa e 3233 413 s 10```
