@@ -1,3 +1,12 @@
+/**
+ * @file rsa.c
+ * @author Brandon Kirincich
+ * @brief an implementation of the rsa.h file usage an extra information below
+ * @version 0.1
+ * @date 2021-03-01
+ *  * 
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <inttypes.h>
@@ -12,7 +21,21 @@
 #define ERROR(x) printf(x); fflush(stdout); exit(EXIT_FAILURE);
 
 /**
- * @brief 
+ * WARNING: in the current state of this program it is not secure
+ * and is vulnerable to many types of attacks
+ * this is good enough for small stuff but do not use for serious applications
+ * 
+ * 
+ * usage: rsa [e public key] | [d private key] | [g] | [s sizeof_stdin_buffer]
+ * example usage:
+ *      -generate the keys with the `g` option-
+ *      ./rsa g
+ * 
+ *      -enter the text to be encryped through stdin-
+ *      echo "text" | ./rsa e 3233 17
+ * 
+ *      -enter the encryped text through stdin to be decrypted-
+ *      echo "884 1313 1542 884" | ./rsa d 3233 413
  * 
  * @param argc length of command line args
  * @param argv array of command line args
@@ -82,12 +105,10 @@ int main(int argc, char* argv[]) {
     rsa_buffer output_rsa_buf;
 
     if(mode == RSA_ENCRYPT) {
-        // use_public_key((public_key){3233, 17});
         use_public_key(e_key);
         output_rsa_buf = encrypt(input_rsa_buf);
     }
     else if(mode == RSA_DECRYPT) {
-        // use_private_key((private_key){3233, 413});
         use_private_key(d_key);
         output_rsa_buf = decrypt(input_rsa_buf);
     }
