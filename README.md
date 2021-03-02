@@ -26,3 +26,9 @@ rsa.h can be used as a header only library. rsa.c is just a sample.
 @NOTE make sure there are at least 2 extra bytes given to the size option
 
 ```echo "test" | ./rsa e 3233 413 s 10```
+
+
+### TODO
+
+- put two characters into each encrypted "block"
+- output raw binary data instead of outputting the value as an integer
